@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Jaskinia analityczna</title>
-</head>
-<body>
-
-<ul>
-    <li class="main-menu"><a href="index.html">Strona główna</a></li>
-    <li class="main-menu"><a href="dania-miesne.html">Dania mięsne</a></li>
-    <li class="main-menu"><a href="#">Zupy</a></li>
-    <li class="main-menu"><a href="#">Desery</a></li>
-</ul>
-
-
-<ul>
-    <li>Punkt pierwszy</li>
-    <li>Punkt drugi</li>
-    <li>Punkt trzeci</li>
-</ul>
-
-
-<ul>
-    <li><a href="#zeberka">Żebreka BBQ</a></li>
-    <ul>
-        <li><a href="#skladniki">Składniki</a></li>
-        <li><a href="#przygotowanie">Przygotowanie</a></li>
-    </ul>
-
-</ul>
-
-</body>
+<html>
+  <head>
+    <title>Nazwa Twojej strony</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <ul>
+          <li><a href="#home">Strona główna</a></li>
+          <li><a href="#education">Edukacja</a></li>
+          <li><a href="#curiosities">Ciekawostki</a></li>
+          <li><a href="#good-practices">Dobre praktyki</a></li>
+        </ul>
+      </nav>
+      <header>
+        <img src="Resources/Img/logo.jpg" alt="Logo Twojej strony">
+      </header>
+      <main>
+        <section id="home">
+          <h1>Witaj na stronie głównej</h1>
+          <p>Tutaj możesz umieścić swoją treść dla strony głównej</p>
+        </section>
+        <section id="education">
+          <h1>Edukacja</h1>
+          <p>Tutaj możesz umieścić swoją treść dla strony edukacyjnej</p>
+        </section>
+        <section id="curiosities">
+          <h1>Ciekawostki</h1>
+          <p>Tutaj możesz umieścić swoją treść dla strony ciekawostek</p>
+        </section>
+        <section id="good-practices">
+          <h1>Dobre praktyki</h1>
+          <p>Tutaj możesz umieścić swoją treść dla strony dobrych praktyk</p>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
