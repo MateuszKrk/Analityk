@@ -1,22 +1,30 @@
-// Pobranie roku od użytkownika
-var rok = prompt("Podaj rok (4 cyfry):");
-
-// Wygenerowanie daty urodzenia losowej osoby w podanym roku
-var dzien = Math.floor(Math.random() * 31) + 1;
-var miesiac = Math.floor(Math.random() * 12) + 1;
-var rokUrodzenia = rok.substring(2, 4) + rok.substring(0, 2);
-
-// Wygenerowanie cyfry kontrolnej
-var wagi = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1];
-var suma = 0;
-
-for (var i = 0; i < 11; i++) {
-  var cyfra = Math.floor(Math.random() * 10);
-  suma += cyfra * wagi[i];
-}
-
-var cyfraKontrolna = (10 - suma % 10) % 10;
-
-// Wyświetlenie numeru PESEL na stronie
-var pesel = rokUrodzenia + ("0" + miesiac).slice(-2) + ("0" + dzien).slice(-2) + cyfraKontrolna;
-document.write("Wygenerowany numer PESEL: " + pesel);
+function generujPesel() {
+    var rok = document.getElementById("rok").value;
+    var miesiac = Math.floor(Math.random() * 12) + 1;
+    var dzien = Math.floor(Math.random() * 31) + 1;
+    var seria = Math.floor(Math.random() * 999) + 1;
+    var kontrola = 0;
+  
+    if (rok >= 1900 && rok <= 1999) {
+      miesiac += 80;
+    } else if (rok >= 2000 && rok <= 2099) {
+      miesiac += 20;
+    } else if (rok >= 2100 && rok <= 2199) {
+      miesiac += 40;
+    } else if (rok >= 2200 && rok <= 2299) {
+      miesiac += 60;
+    }
+  
+    var pesel = rok.toString().substring(2) + miesiac.toString().padStart(2, "0") + dzien.toString().padStart(2, "0") + seria.toString().padStart(3, "0");
+  
+    for (var i = 0; i < pesel.length; i++) {
+      var waga = [1, 3, 7, 9];
+      kontrola += parseInt(pesel.charAt(i)) * waga[i % 4];
+    }
+  
+    kontrola = (10 - (kontrola % 10)) % 10;
+    pesel += kontrola;
+  
+    alert("Wygenerowany numer PESEL: " + pesel);
+  }
+  
